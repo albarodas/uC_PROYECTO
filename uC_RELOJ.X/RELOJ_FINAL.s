@@ -263,6 +263,7 @@
  return_from_tmr0:
     return
     
+    ;| DISPLAY 1  | DISPLAY2 | DISPLAY 3  | DISPLAY 4 |
  ;<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< SUBRUTINAS DE TMR1 >>>>>>>>>>>>>>>>>>>>>>>>>>>>
  interrupcion_tmr1:
     RESET_TMR1 0xB, 0xDC
@@ -692,7 +693,7 @@
     movf	PORTB, W	; LEO EL PORTB Y PASO A NEXT LINE
     bcf		RBIF		; END AL MISMATCH
     return
- ;<<<<<<<<<<<<<<<<<<<<<<<<< FMS PRINCIPAL (IOCB) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ ;<<<<<<<<<<<<<<<<<<<<<<<<< MÁQUINA DE ESTADOS FINITOS (EN BASE A INTERRUPCIONES) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
  maquina_estados_finitos:	   ; AJUSTO LOS ESTADOS EN MI 'MÁQUINA DE ESTADOS FINITOS'
    
     movf	presiono_boton, W   ; HAGO LA CASCADA DE ESTADOS QUE HICE EN APARTADOS ANTERIORES, PARA SABER EN QUE ESTADO ESTOY
